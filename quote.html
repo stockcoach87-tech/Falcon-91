@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request a Quote | FALCON 91</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+<a href="index.html" class="logo">🦅 FALCON 91</a>
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+<nav id="nav">
+<a href="index.html">Home</a><a href="about.html">About</a>
+<a href="services.html">Services</a><a href="team.html">Team</a>
+<a href="faq.html">FAQ</a><a href="contact.html">Contact</a>
+<a href="quote.html" class="nav-btn">Get a Quote ↗</a>
+</nav>
+</header>
+
+<section class="page-hero">
+<span class="eyebrow">LET'S GET STARTED</span>
+<h1>Request a <span>Quote</span></h1>
+<p>Share your transport requirement so we can review the details.</p>
+</section>
+
+<section class="section contact-layout">
+<div>
+<span class="eyebrow">YOUR REQUIREMENT</span>
+<h2>Tell Us About Your Shipment.</h2>
+<p>Please provide accurate details to help explain what you need.</p>
+
+<div class="quote-tip">
+<strong>Helpful information</strong>
+<p>Pickup and destination, cargo type, approximate weight, dimensions and preferred date.</p>
+</div>
+
+<div class="contact-item">
+<div class="icon">📞</div>
+<div>
+<strong>Phone</strong>
+<p><a href="tel:+919916553285">+91 99165 53285</a></p>
+</div>
+</div>
+
+<div class="contact-item">
+<div class="icon">✉️</div>
+<div>
+<strong>Email</strong>
+<p><a href="mailto:galka5336@gmail.com">galka5336@gmail.com</a></p>
+</div>
+</div>
+</div>
+
+<form class="contact-form" id="quoteForm">
+<h2>Quote Details</h2>
+
+<label>Full Name
+<input type="text" name="name" required placeholder="Your name">
+</label>
+
+<label>Company Name
+<input type="text" name="company" placeholder="Business name (optional)">
+</label>
+
+<label>Email Address
+<input type="email" name="email" required placeholder="you@example.com">
+</label>
+
+<label>Phone Number
+<input type="tel" name="phone" placeholder="+91">
+</label>
+
+<label>Pickup Location
+<input type="text" name="origin" required placeholder="From">
+</label>
+
+<label>Delivery Location
+<input type="text" name="destination" required placeholder="To">
+</label>
+
+<label>Shipment Details
+<textarea name="details" rows="4" required placeholder="Cargo type, weight, dimensions and preferred date"></textarea>
+</label>
+
+<button type="submit" class="btn">Prepare Quote Email ↗</button>
+<p class="form-note">This form prepares an email. It does not confirm a booking or save data to a server.</p>
+</form>
+</section>
+
+<footer class="footer">
+<a href="index.html" class="logo">🦅 FALCON 91</a>
+<p>+91 99165 53285 · galka5336@gmail.com</p>
+<div class="footer-links">
+<a href="index.html">Home</a><a href="services.html">Services</a>
+<a href="faq.html">FAQ</a><a href="contact.html">Contact</a>
+</div>
+<small>© <span id="year"></span> FALCON 91. All rights reserved.</small>
+</footer>
+
+<script src="script.js"></script>
+<script>
+document.getElementById("quoteForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const d = new FormData(this);
+
+  const body = `Name: ${d.get("name")}
+Company: ${d.get("company")}
+Email: ${d.get("email")}
+Phone: ${d.get("phone")}
+Pickup: ${d.get("origin")}
+Destination: ${d.get("destination")}
+
+Shipment Details:
+${d.get("details")}`;
+
+  window.location.href =
+    "mailto:galka5336@gmail.com?subject=" +
+    encodeURIComponent("FALCON 91 - Quote Request") +
+    "&body=" + encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
