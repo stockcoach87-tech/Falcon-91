@@ -648,3 +648,10 @@ nav a:hover { color: var(--gold); }
   height: 48px;
   object-fit: contain;
 }
+.eagle img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 25px #0008);
+}
